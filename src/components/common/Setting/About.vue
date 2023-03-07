@@ -34,13 +34,18 @@ onMounted(() => {
 <template>
   <NSpin :show="loading">
     <div class="p-4 space-y-4">
-      <h2 class="text-xl font-bold">V1.0.0
+      <h2 class="text-xl font-bold" hidden>
+        Version - {{ pkg.version }}
       </h2>
       <div class="p-2 space-y-2 rounded-md bg-neutral-100 dark:bg-neutral-700">
         <p>
           此项目仅用于个人学习使用，请勿恶搞，谢谢~
         </p>
       </div>
+      <p hidden>{{ $t("setting.api") }}：{{ config?.apiModel ?? '-' }}</p>
+      <p hidden>{{ $t("setting.reverseProxy") }}：{{ config?.reverseProxy ?? '-' }}</p>
+      <p hidden>{{ $t("setting.timeout") }}：{{ config?.timeoutMs ?? '-' }}</p>
+      <p hidden>{{ $t("setting.socks") }}：{{ config?.socksProxy ?? '-' }}</p>
     </div>
   </NSpin>
 </template>
